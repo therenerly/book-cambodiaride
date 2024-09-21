@@ -163,7 +163,7 @@ nav .logo {
 /* Make the footer stick to the bottom */
 footer {
     margin-top: auto;
-    height: 60px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
