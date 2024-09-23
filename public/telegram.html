@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Cambodia Ride</title>
+</head>
+
+<body>
+    <div class="book">
+        <h2>Book Cambodia Ride</h2>
+        <p>Could you provide us your information below:</p>
+        <form action="">
+            <hr>
+            <div class="input-form">
+                <label for="datetime">Date & time</label><br />
+                <input id="datetime" type="datetime-local" placeholder="Date & time">
+            </div>
+            <hr>
+            <div class="input-form">
+                <label for="name">Your full name</label><br />
+                <input id="name" type="text" placeholder="Your full name">
+            </div>
+            <hr>
+            <div class="input-form">
+                <label for="pickup">Pick up location</label><br />
+                <input id="pickup" type="text" placeholder="Pick up location">
+            </div>
+            <hr>
+            <div class="input-form">
+                <label for="destination">Destination</label><br />
+                <input id="destination" type="text" placeholder="Destination">
+            </div>
+            <hr>
+            <div class="input-form">
+                <label for="pax">No of Pax</label><br />
+                <input id="pax" type="number" placeholder="No of pax">
+            </div>
+            <hr>
+            <label for="message">Your Message</label><br />
+            <textarea name="" id="message" rows="10" placeholder="Your Message"></textarea><br>
+            <button onclick="book()">Submit</button>
+        </form>
+    </div>
+    <script>
+        function book() {
+            let mail = "cambodia.ride.taxi@gmail.com";
+
+            let datetime = document.getElementById('datetime').value;
+            let name = document.getElementById('name').value;
+            let pickup = document.getElementById('pickup').value;
+            let destination = document.getElementById('destination').value;
+            let pax = document.getElementById('pax').value;
+            let message = document.getElementById('message').value;
+
+            var url = "mailto:" + mail + "?subject=New Reservation"
+                + "&body=Please book new reservation:"
+                + "* Date & time : " + datetime + "%0a"
+                + "* Name : " + name + "%0a"
+                + "* Pick up location : " + pickup + "%0a"
+                + "* Destination : " + destination + "%0a"
+                + "* No of Pax : " + pax + "pax" + "%0a"
+                + "* Message : " + message + "%0a%0a";
+
+            window.open(url, '_blank').focus();
+        }
+    </script>
+</body>
+
+</html>
